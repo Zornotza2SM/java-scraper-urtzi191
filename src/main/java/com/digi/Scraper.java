@@ -23,9 +23,8 @@ public class Scraper {
         
         try {
             // Carga el archivo HTML estático localmente
-            File input = new File("index.html");
-            Document doc = Jsoup.parse(input, "UTF-8", ""); 
-            
+            Document doc = Jsoup.connect("https://www.huffingtonpost.es/").get();
+
             System.out.println("Documento HTML cargado. Iniciando el scraping (Extracción de datos)...");
             
             // 2. Seleccionar todos los contenedores de producto
